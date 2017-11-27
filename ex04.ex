@@ -39,7 +39,7 @@ defmodule Ex04 do
       [ 1, 2, 3, 4, 5 ]
 
   """
-  def reverse . . . "your code"
+#  def reverse . . . "your code"
 
   ##############################################################################
   # 4.2:  5 points #
@@ -54,8 +54,11 @@ defmodule Ex04 do
       -7
 
   """
+  def min([x]), do: x
 
-  def min . . . "your code"
+  def min([ head | tail ]), do: Kernel.min(head, min(tail))
+
+  end
 
   ##############################################################################
   # 4.3: 10 points #
@@ -75,7 +78,11 @@ defmodule Ex04 do
   return value will be the thing you have to manipulate.
   """
 
-  def even_odd . . . "your code"
+  def even_odd(list) when is_list(list) do
+  odd = for n <- list, rem(n, 2) != 0, do: n
+  even = for n <- list, rem(n, 2) == 0, do: n
+  eve_odd = {even,odd}
+  end
 
 
 
@@ -90,7 +97,7 @@ defmodule Ex04 do
     File.write("Elixir.Ex04.beam", bytecode)
   end
 
-end
+
 
 
 ExUnit.start
@@ -98,4 +105,3 @@ defmodule TestEx04 do
   use ExUnit.Case
   doctest Ex04
 end
-

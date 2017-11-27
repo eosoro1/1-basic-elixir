@@ -77,7 +77,9 @@ defmodule Ex03 do
 
   """
 
-  def list_contains . .. "your code"
+   def list_contains(list, a) when is_list(list) do
+   Enum.member?(list, a)
+   end
 
   ##############################################################################
   # 3.3:  5 points #
@@ -101,7 +103,9 @@ defmodule Ex03 do
 
   """
 
-  def list_equal . . . "your code"
+    def list_equal(list1, list2) do
+    list1 == list2
+    end
 
 
 
